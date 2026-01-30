@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音视频合成工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>音视频合成工具</h1>
+        
+        <!-- 文件上传区域 -->
+        <div class="upload-section">
+            <h2>上传文件</h2>
+            <div class="upload-container">
+                <div class="file-upload">
+                    <label for="video-upload">视频文件</label>
+                    <input type="file" id="video-upload" accept="video/mp4,video/avi,video/mov" required>
+                    <div class="progress-container" id="video-progress">
+                        <div class="progress-bar"></div>
+                        <span class="progress-text">0%</span>
+                    </div>
+                    <div class="file-info" id="video-info"></div>
+                </div>
+                
+                <div class="file-upload">
+                    <label for="audio-upload">音频文件</label>
+                    <input type="file" id="audio-upload" accept="audio/mp3,audio/wav,audio/aac" required>
+                    <div class="progress-container" id="audio-progress">
+                        <div class="progress-bar"></div>
+                        <span class="progress-text">0%</span>
+                    </div>
+                    <div class="file-info" id="audio-info"></div>
+                </div>
+            </div>
+            
+            <!-- 合成进度条 -->
+            <div class="progress-container" id="combine-progress" style="display: none; margin: 20px 0;">
+                <div class="progress-bar"></div>
+                <span class="progress-text">0%</span>
+            </div>
+            
+            <button id="combine-btn" disabled>合成视频</button>
+        </div>
+        
+        <!-- 预览区域 -->
+        <div class="preview-section" style="display: none;">
+            <h2>预览合成视频</h2>
+            <div class="video-container">
+                <video id="preview-video" controls width="640" height="360"></video>
+            </div>
+            <div class="download-section">
+                <button id="download-btn" disabled>下载合成视频</button>
+            </div>
+        </div>
+        
+        <!-- 状态提示 -->
+        <div class="status-message" id="status-message"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
